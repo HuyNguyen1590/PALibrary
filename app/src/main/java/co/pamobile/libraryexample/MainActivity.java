@@ -3,6 +3,8 @@ package co.pamobile.libraryexample;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import co.pamobile.pacore.Dialog.DialogExit;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

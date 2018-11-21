@@ -1,1 +1,1 @@
-include ':app', ':PACore'
+include ':app', ':PACore', ':PACard'
