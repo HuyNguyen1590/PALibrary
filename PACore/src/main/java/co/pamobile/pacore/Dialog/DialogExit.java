@@ -11,6 +11,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -30,20 +31,18 @@ import com.bumptech.glide.request.target.Target;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import co.pamobile.pacore.R;
 import co.pamobile.pacore.Utilities.Utils;
 
 public class DialogExit extends Dialog {
 
-    @BindView(R.id.btnCancel)
+    //@BindView(R.id.btnCancel)
     Button btnCancel;
-    @BindView(R.id.btnExit)
+    //@BindView(R.id.btnExit)
     Button btnExit;
-    @BindView(R.id.imgEvent)
+    //@BindView(R.id.imgEvent)
     ImageView imgEvent;
-    @BindView(R.id.rvFeatureApps)
+    //@BindView(R.id.rvFeatureApps)
     RecyclerView rvFeatureApps;
     FeatureBanner featureBanner = new FeatureBanner();
 
@@ -66,10 +65,14 @@ public class DialogExit extends Dialog {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         int width = ViewGroup.LayoutParams.MATCH_PARENT;
         int height = ViewGroup.LayoutParams.WRAP_CONTENT;
-
+        View contentView = LayoutInflater.from(getContext()).inflate(R.layout.layout_dialog_exit,null);
         setContentView(R.layout.layout_dialog_exit);
         getWindow().setLayout(width, height);
-        ButterKnife.bind(this);
+        //ButterKnife.bind(this);
+        btnCancel = contentView.findViewById(R.id.btnCancel);
+        btnExit = contentView.findViewById(R.id.btnExit);
+        imgEvent = contentView.findViewById(R.id.imgEvent);
+        rvFeatureApps = contentView.findViewById(R.id.rvFeatureApps);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
