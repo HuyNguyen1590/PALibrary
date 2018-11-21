@@ -9,5 +9,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        DialogExit dialog = new DialogExit(MainActivity.this, listFeatureApp, featureBanner);
+//        dialog.setCancelable(true);
+//        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+//        dialog.show();
     }
 }
