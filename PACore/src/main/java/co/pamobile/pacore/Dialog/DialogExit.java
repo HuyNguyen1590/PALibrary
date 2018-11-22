@@ -31,30 +31,40 @@ import com.bumptech.glide.request.target.Target;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import co.pamobile.pacore.R;
+import co.pamobile.pacore.R2;
 import co.pamobile.pacore.Utilities.Utils;
 
 public class DialogExit extends Dialog {
 
-    //@BindView(R.id.btnCancel)
+    @BindView(R2.id.btnCancel)
     Button btnCancel;
-    //@BindView(R.id.btnExit)
+    @BindView(R2.id.btnExit)
     Button btnExit;
-    //@BindView(R.id.imgEvent)
+    @BindView(R2.id.imgEvent)
     ImageView imgEvent;
-    //@BindView(R.id.rvFeatureApps)
+    @BindView(R2.id.rvFeatureApps)
     RecyclerView rvFeatureApps;
     FeatureBanner featureBanner = new FeatureBanner();
 
-
     List<AppItem> featureItems = new ArrayList<>();
     Context mContext;
-
+    @OnClick(R2.id.btnCancel)
+    public void sayHi(Button button) {
+        button.setText("Hello!");
+    }
     public DialogExit(@NonNull Context context, List<AppItem> featureItems, FeatureBanner featureBanner) {
         super(context);
         this.mContext = context;
         this.featureItems = featureItems;
         this.featureBanner  = featureBanner;
+    }
+
+    public View getDialogView(){
+        return LayoutInflater.from(getContext()).inflate(R.layout.layout_dialog_exit,null);
     }
 
     @Override
@@ -65,14 +75,9 @@ public class DialogExit extends Dialog {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         int width = ViewGroup.LayoutParams.MATCH_PARENT;
         int height = ViewGroup.LayoutParams.WRAP_CONTENT;
-        View contentView = LayoutInflater.from(getContext()).inflate(R.layout.layout_dialog_exit,null);
-        setContentView(R.layout.layout_dialog_exit);
+        setContentView(getDialogView());
         getWindow().setLayout(width, height);
-        //ButterKnife.bind(this);
-        btnCancel = contentView.findViewById(R.id.btnCancel);
-        btnExit = contentView.findViewById(R.id.btnExit);
-        imgEvent = contentView.findViewById(R.id.imgEvent);
-        rvFeatureApps = contentView.findViewById(R.id.rvFeatureApps);
+        ButterKnife.bind(this);
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
