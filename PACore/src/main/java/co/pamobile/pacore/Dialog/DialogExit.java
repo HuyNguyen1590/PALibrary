@@ -52,12 +52,24 @@ public class DialogExit extends Dialog {
 
     List<AppItem> featureItems = new ArrayList<>();
     Context mContext;
-    @OnClick(R2.id.btnCancel)
-    public void sayHi(Button button) {
-        button.setText("Hello!");
+
+    public Button getBtnCancel() {
+        return btnCancel;
     }
+
+    public Button getBtnExit() {
+        return btnExit;
+    }
+
     public DialogExit(@NonNull Context context, List<AppItem> featureItems, FeatureBanner featureBanner) {
-        super(context);
+        super(context,R.style.AppTheme_ThemeDialogCustom);
+        this.mContext = context;
+        this.featureItems = featureItems;
+        this.featureBanner  = featureBanner;
+    }
+
+    public DialogExit(@NonNull Context context, List<AppItem> featureItems, FeatureBanner featureBanner,int theme) {
+        super(context,theme);
         this.mContext = context;
         this.featureItems = featureItems;
         this.featureBanner  = featureBanner;

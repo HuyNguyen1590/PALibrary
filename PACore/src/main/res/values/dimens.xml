@@ -4,7 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="padding_rec">16dp</dimen>
     <bool name="isTablet">false</bool>
-
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
@@ -43,4 +42,5 @@
     <dimen name="moreapps_item_height">75dp</dimen>
     <dimen name="moreapps_icon_size">40dp</dimen>
     <dimen name="moreapps_icon_text_size">12dp</dimen>
+    <dimen name="moreapps_title_text_size">14dp</dimen>
 </resources>

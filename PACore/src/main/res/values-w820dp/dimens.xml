@@ -6,7 +6,8 @@
     <dimen name="padding_rec">64dp</dimen>
     <bool name="isTablet">true</bool>
     <dimen name="moreapps_label_margin">10dp</dimen>
-    <dimen name="moreapps_item_height">120dp</dimen>
+    <dimen name="moreapps_item_height">160dp</dimen>
     <dimen name="moreapps_icon_size">100dp</dimen>
     <dimen name="moreapps_icon_text_size">18dp</dimen>
+    <dimen name="moreapps_title_text_size">20dp</dimen>
 </resources>

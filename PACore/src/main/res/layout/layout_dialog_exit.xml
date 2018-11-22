@@ -1,60 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingTop="20dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:paddingBottom="5dp">
-    <TextView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"  android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TRY OUR OTHER APPS"
-        android:layout_marginBottom="10dp"
-        android:textSize="14dp"
-        android:textStyle="bold"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/rvFeatureApps"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"></android.support.v7.widget.RecyclerView>
-
-    <ImageView
-        android:id="@+id/imgEvent"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:gravity="center|right"
-        android:layout_marginTop="5dp">
-        <Button
-            android:layout_width="100dp"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:id="@+id/btnCancel"
-            android:textColor="#adadad"
-            android:background="@android:color/transparent"/>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="30dp"
-            android:background="#e9eced"/>
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Exit"
-            android:id="@+id/btnExit"
-            android:textColor="@android:color/holo_red_light"
-            android:background="@android:color/transparent"/>
-    </LinearLayout>
+            android:text="TRY OUR OTHER APPS"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/moreapps_title_text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"/>
 
-</LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvFeatureApps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <ImageView
+            android:id="@+id/imgEvent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintDimensionRatio="H,10:3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvFeatureApps" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center|right"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/imgEvent">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Cancel"
+                android:textColor="#adadad" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:background="#e9eced" />
+
+            <Button
+                android:id="@+id/btnExit"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Exit"
+                android:textColor="@android:color/holo_red_light" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
