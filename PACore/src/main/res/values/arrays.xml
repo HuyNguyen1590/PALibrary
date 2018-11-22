@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="nav_drawer_items">
+        <item>New</item>
+        <item>Manage</item>
+        <item>Rate App</item>
+        <item>More Apps</item>
+    </string-array>
+
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_app_default</item>
+        <item>@drawable/ic_app_default</item>
+        <item>@drawable/ic_app_default</item>
+        <item>@drawable/ic_app_default</item>
+    </array>
+</resources>
