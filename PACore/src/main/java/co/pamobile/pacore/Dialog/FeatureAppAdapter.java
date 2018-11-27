@@ -33,7 +33,7 @@ public class FeatureAppAdapter extends RecyclerView.Adapter<FeatureAppAdapter.My
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View vi = View.inflate(mContext, R.layout.item_app, null);
+        View vi = View.inflate(mContext, R.layout.layout_item_app, null);
         MyViewHolder holder = new MyViewHolder(vi);
         return holder;
     }

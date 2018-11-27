@@ -26,6 +26,7 @@
     <dimen name="layout_16">16dp</dimen>
     <dimen name="layout_8">8dp</dimen>
     <dimen name="layout_12">12dp</dimen>
+
     <dimen name="item_type_icon_size">24dp</dimen>
     <dimen name="layout_item_type_height">48dp</dimen>
     <dimen name="layout_item_type_text_size">13dp</dimen>
