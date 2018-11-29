@@ -88,27 +88,7 @@ public class SharedPreference<T> {
         return (ArrayList<T>) cards;
     }
 
-    public void saveNum(int num, String key){
-        SharedPreferences settings;
-        SharedPreferences.Editor editor;
 
-        settings = context.getSharedPreferences(PREFS_NAME,
-                Context.MODE_PRIVATE);
-        editor = settings.edit();
-
-        editor.putInt(key, num);
-
-        editor.apply();
-    }
-
-    public int getNum(String key){
-        SharedPreferences settings;
-        int num;
-        settings = context.getSharedPreferences(PREFS_NAME,
-                Context.MODE_PRIVATE);
-        num = settings.getInt(key, 0);
-        return num;
-    }
 
 }
 

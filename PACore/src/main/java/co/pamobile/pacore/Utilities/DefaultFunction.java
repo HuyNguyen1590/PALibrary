@@ -1,4 +1,4 @@
-package co.pamobile.pacardmaker.Model;
+package co.pamobile.pacore.Utilities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,8 +17,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import co.pamobile.pacardmaker.R;
-import co.pamobile.pacardmaker.Util.Const;
+import co.pamobile.pacore.R;
+import co.pamobile.pacore.Storage.SharedPreference;
 
 /**
  * Created by tuongvan on 3/2/18.
@@ -27,7 +27,7 @@ import co.pamobile.pacardmaker.Util.Const;
 public class DefaultFunction {
     Activity mActivity;
     SharedPreference sharedPreferences;
-
+    public  String URL_GOOGLEPLAY = "https://play.google.com/store/apps/details?id=";
 
     public DefaultFunction(Activity mActivity){
         this.mActivity = mActivity;
@@ -38,7 +38,7 @@ public class DefaultFunction {
     public void checkPackageName(String packageName){
         if(!mActivity.getPackageName().equals(packageName)){
             Intent intent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse(Const.URL_GOOGLEPLAY + mActivity.getPackageName()));
+                    Uri.parse(URL_GOOGLEPLAY + mActivity.getPackageName()));
             mActivity.startActivity(intent);
             mActivity.finish();
         }
@@ -69,7 +69,7 @@ public class DefaultFunction {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                mActivity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Const.URL_GOOGLEPLAY + mActivity.getPackageName())));
+                mActivity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(URL_GOOGLEPLAY + mActivity.getPackageName())));
                 dialogInterface.dismiss();
             }
         });
@@ -101,7 +101,7 @@ public class DefaultFunction {
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        mActivity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Const.URL_GOOGLEPLAY + mActivity.getPackageName())));
+                        mActivity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(URL_GOOGLEPLAY + mActivity.getPackageName())));
                         //never show again
                         editor.putBoolean("rate_status", true);
                         editor.apply();
@@ -155,7 +155,7 @@ public class DefaultFunction {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(Intent.ACTION_VIEW,
-                                Uri.parse(Const.URL_GOOGLEPLAY + mActivity.getPackageName()));
+                                Uri.parse(URL_GOOGLEPLAY + mActivity.getPackageName()));
                         mActivity.startActivity(intent);
                         dialogInterface.dismiss();
                     }
@@ -177,7 +177,7 @@ public class DefaultFunction {
     }
 
     public void confirmExit() {
-        new android.app.AlertDialog.Builder(mActivity)
+        new AlertDialog.Builder(mActivity)
                 .setCancelable(true)
                 .setTitle("Confirm")
                 .setMessage(R.string.message_exit)
