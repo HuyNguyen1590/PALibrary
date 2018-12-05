@@ -1,5 +1,6 @@
 package co.pamobile.pacore.MoreApp;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -28,19 +29,21 @@ import co.pamobile.pacore.R;
 public class MoreAppFragment extends Fragment {
     List<AppItem> lisAllApp = new ArrayList<>();
     public RecyclerView rvMoreApp;
-
-    public List<AppItem> getLisAllApp() {
-        return lisAllApp;
-    }
-
-    public void setListMoreApp(List<AppItem> lisAllApp) {
+    RecyclerViewMoreAppAdapter adapter;
+    Activity activity;
+    public void Config(Activity activity,List<AppItem> lisAllApp){
+        this.activity = activity;
         this.lisAllApp = lisAllApp;
+        if(adapter!=null){
+            adapter.notifyDataSetChanged();
+        }
     }
-
 
     public void setBgImage(int bgImage) {
         this.bgImage = bgImage;
     }
+
+
 
     int bgImage = -1;
 
@@ -57,7 +60,9 @@ public class MoreAppFragment extends Fragment {
             Glide.with(this).load(bgImage).apply(new RequestOptions().centerCrop()).into((ImageView) view.findViewById(R.id.imgBackground));
         }
         rvMoreApp = view.findViewById(R.id.rvMoreApp);
-        lisAllApp = new ArrayList<>();
+        if(lisAllApp == null){
+            lisAllApp = new ArrayList<>();
+        }
         getMoreApp();
 
         return view;
@@ -70,7 +75,8 @@ public class MoreAppFragment extends Fragment {
             while(iterator.hasNext())
             {
                 AppItem value = iterator.next();
-                if (getContext().getPackageName().equals(value.getPackageName()))
+
+                if (activity.getPackageName().equals(value.getPackageName()))
                 {
                     iterator.remove();
                     break;
@@ -81,13 +87,13 @@ public class MoreAppFragment extends Fragment {
             lisAllApp = new ArrayList<>();
         }
         GridLayoutManager layoutManager;
-        boolean isTablet = getContext().getResources().getBoolean(R.bool.isTablet);
+        boolean isTablet = activity.getResources().getBoolean(R.bool.isTablet);
         if (isTablet) {
-            layoutManager = new GridLayoutManager(getActivity(), 6);
+            layoutManager = new GridLayoutManager(activity, 6);
         } else {
-            layoutManager = new GridLayoutManager(getActivity(), 4);
+            layoutManager = new GridLayoutManager(activity, 4);
         }
-        RecyclerViewMoreAppAdapter adapter = new RecyclerViewMoreAppAdapter(getActivity(), lisAllApp);
+        adapter = new RecyclerViewMoreAppAdapter(activity, lisAllApp);
         rvMoreApp.setLayoutManager(layoutManager);
         rvMoreApp.setAdapter(adapter);
     }

@@ -3,6 +3,7 @@ package co.pamobile.libraryexample;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.FrameLayout;
 
 import com.google.gson.Gson;
 
@@ -15,6 +16,7 @@ import co.pamobile.pacore.Dialog.AppItem;
 import co.pamobile.pacore.Dialog.DialogExit;
 import co.pamobile.pacore.Dialog.FeatureBanner;
 import co.pamobile.pacore.Dialog.Policy;
+import co.pamobile.pacore.MoreApp.MoreAppFragment;
 import co.pamobile.pacore.Utilities.ArrayConvert;
 
 public class MainActivity extends BaseLeftMenuActivity {
@@ -37,8 +39,11 @@ public class MainActivity extends BaseLeftMenuActivity {
 
         navDrawerListAdapter.setMoreAppItems(ArrayConvert.toArrayList(listFeatureApp));
 
-
-
+        MoreAppFragment moreAppFragment = new MoreAppFragment();
+        moreAppFragment.Config(this,listFeatureApp);
+        //moreAppFragment.getMoreApp();
+        android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.add(R.id.content_main, moreAppFragment).commit();
 
 
         Policy.getInstance(this).setRawID(R.raw.privacy_policy).loadPrivacyPolicy();
