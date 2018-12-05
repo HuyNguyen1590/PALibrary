@@ -1,25 +1,40 @@
 package co.pamobile.pacore.Navigation;
 
 import android.app.Activity;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import co.pamobile.pacore.Dialog.AppItem;
+import co.pamobile.pacore.MoreApp.MoreAppAdapter;
 import co.pamobile.pacore.R;
 
 public class NavDrawerListAdapter extends BaseAdapter {
-    private Activity mActivity;
-    private ArrayList<NavDrawerItem> navDrawerItems;
-
+    protected Activity mActivity;
+    protected ArrayList<NavDrawerItem> navDrawerItems;
+    protected ArrayList<AppItem> moreAppItems = new ArrayList<>();
     public NavDrawerListAdapter(Activity mActivity, ArrayList<NavDrawerItem> navDrawerItems) {
         this.mActivity = mActivity;
         this.navDrawerItems = navDrawerItems;
 
+    }
+
+    public NavDrawerListAdapter(Activity mActivity, ArrayList<NavDrawerItem> navDrawerItems,ArrayList<AppItem> moreAppItems) {
+        this.mActivity = mActivity;
+        this.navDrawerItems = navDrawerItems;
+        this.moreAppItems = moreAppItems;
+    }
+
+    public void setMoreAppItems(ArrayList<AppItem> moreAppItems) {
+        this.moreAppItems = moreAppItems;
     }
 
     @Override
@@ -46,10 +61,33 @@ public class NavDrawerListAdapter extends BaseAdapter {
         }
         ImageView imgIcon =  convertView.findViewById(R.id.icon);
         TextView txtTitle =  convertView.findViewById(R.id.title);
+        final ListView lvMoreApps = convertView.findViewById(R.id.moreApp);
 
         imgIcon.setImageResource(navDrawerItems.get(position).getIcon());
         txtTitle.setText(navDrawerItems.get(position).getTitle());
-        //overrideFonts(mActivity, convertView,"fonts/Supercell-magic-webfont.ttf");
+        if (navDrawerItems.get(position).getTitle().equals("More Apps")) {
+            MoreAppAdapter appAdapter = new MoreAppAdapter(mActivity, moreAppItems);
+            lvMoreApps.setAdapter(appAdapter);
+            lvMoreApps.setVisibility(View.VISIBLE);
+            LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) lvMoreApps.getLayoutParams();
+            int heightpx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 43, mActivity.getResources().getDisplayMetrics());
+            params.height = (moreAppItems.size() * heightpx);
+            lvMoreApps.setLayoutParams(params);
+
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    lvMoreApps.setClickable(true);
+                    if (lvMoreApps.getVisibility() == View.VISIBLE) {
+                        lvMoreApps.setVisibility(View.GONE);
+                    } else {
+                        lvMoreApps.setVisibility(View.VISIBLE);
+                    }
+                }
+            });
+
+
+        }
         return convertView;
     }
 

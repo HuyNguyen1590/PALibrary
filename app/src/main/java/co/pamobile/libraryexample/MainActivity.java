@@ -15,6 +15,7 @@ import co.pamobile.pacore.Dialog.AppItem;
 import co.pamobile.pacore.Dialog.DialogExit;
 import co.pamobile.pacore.Dialog.FeatureBanner;
 import co.pamobile.pacore.Dialog.Policy;
+import co.pamobile.pacore.Utilities.ArrayConvert;
 
 public class MainActivity extends BaseLeftMenuActivity {
     List<AppItem> listFeatureApp;
@@ -28,11 +29,18 @@ public class MainActivity extends BaseLeftMenuActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadNavigation(R.array.nav_drawer_items,R.array.nav_drawer_icons);
         Gson gson = new Gson();
-        featureBanner = gson.fromJson(FEATURE_BANNER, FeatureBanner.class);
         AppItem[] arrApp = gson.fromJson(FEATURE_APPS, AppItem[].class);
         listFeatureApp = Arrays.asList(arrApp);
+        featureBanner = gson.fromJson(FEATURE_BANNER, FeatureBanner.class);
+        loadNavigation(R.array.nav_drawer_items,R.array.nav_drawer_icons);
+
+        navDrawerListAdapter.setMoreAppItems(ArrayConvert.toArrayList(listFeatureApp));
+
+
+
+
+
         Policy.getInstance(this).setRawID(R.raw.privacy_policy).loadPrivacyPolicy();
     }
 

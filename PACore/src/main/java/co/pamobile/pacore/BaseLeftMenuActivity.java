@@ -48,8 +48,8 @@ public abstract class BaseLeftMenuActivity extends AppCompatActivity {
 
     private String[] navMenuTitles;
     private TypedArray navMenuIcons;
-    private ArrayList<NavDrawerItem> navDrawerItems;
-    private NavDrawerListAdapter adapter;
+    protected ArrayList<NavDrawerItem> navDrawerItems;
+    protected NavDrawerListAdapter navDrawerListAdapter;
 
     public void setOnNavItemClick(ListView.OnItemClickListener onNavItemClick) {
         this.onNavItemClick = onNavItemClick;
@@ -97,8 +97,8 @@ public abstract class BaseLeftMenuActivity extends AppCompatActivity {
         // Recycle the typed array
         navMenuIcons.recycle();
         mDrawerList.setOnItemClickListener(onNavItemClick);
-        adapter = new NavDrawerListAdapter(this, navDrawerItems);
-        mDrawerList.setAdapter(adapter);
+        navDrawerListAdapter = new NavDrawerListAdapter(this, navDrawerItems);
+        mDrawerList.setAdapter(navDrawerListAdapter);
     }
 
     protected void addNavigationItem() {
