@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import co.pamobile.pacore.Dialog.Policy;
 import co.pamobile.pacore.R;
 import co.pamobile.pacore.Storage.SharedPreference;
 
@@ -28,6 +29,13 @@ public class DefaultFunction {
     Activity mActivity;
     SharedPreference sharedPreferences;
     public  String URL_GOOGLEPLAY = "https://play.google.com/store/apps/details?id=";
+    private static DefaultFunction INSTANCE = null;
+    public static DefaultFunction getInstance(Activity mActivity){
+        if(INSTANCE == null){
+            INSTANCE = new DefaultFunction(mActivity);
+        }
+        return INSTANCE;
+    }
 
     public DefaultFunction(Activity mActivity){
         this.mActivity = mActivity;
@@ -42,49 +50,6 @@ public class DefaultFunction {
             mActivity.startActivity(intent);
             mActivity.finish();
         }
-    }
-
-    //check the number open
-    private void checkNumOpen() {
-        int num = sharedPreferences.getNum(sharedPreferences.NUM_OPEN);
-        if (num != 0) {
-            if (num <= 3) {
-                if (num == 3) {
-                    confirmApp();
-                }
-                num++;
-                sharedPreferences.saveNum(num, sharedPreferences.NUM_OPEN);
-            }
-        } else {
-            sharedPreferences.saveNum(1,sharedPreferences.NUM_OPEN);
-        }
-    }
-
-    //show dialog rate app
-    public void confirmApp() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-        builder.setTitle("Thank you");
-        builder.setMessage(R.string.message_rate_app);
-        builder.setCancelable(false);
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                mActivity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(URL_GOOGLEPLAY + mActivity.getPackageName())));
-                dialogInterface.dismiss();
-            }
-        });
-        builder.setNegativeButton("LATER", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                sharedPreferences.saveNum(1, sharedPreferences.NUM_OPEN);
-                dialogInterface.dismiss();
-            }
-        });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-        Button nbutton = alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE);
-        nbutton.setTextColor(Color.GRAY);
-
     }
 
     public void rateApp() {
@@ -126,16 +91,16 @@ public class DefaultFunction {
         editor.apply();
     }
 
-    private void overrideFonts(final Context context, final View v) {
+    public void overrideFonts(final View v,Typeface typeface) {
         try {
             if (v instanceof ViewGroup) {
                 ViewGroup vg = (ViewGroup) v;
                 for (int i = 0; i < vg.getChildCount(); i++) {
                     View child = vg.getChildAt(i);
-                    overrideFonts(context, child);
+                    overrideFonts(child,typeface);
                 }
             } else if (v instanceof TextView) {
-                ((TextView) v).setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Supercell-magic-webfont.ttf"));
+                ((TextView) v).setTypeface(typeface);
             }
         } catch (Exception ignored) {
         }

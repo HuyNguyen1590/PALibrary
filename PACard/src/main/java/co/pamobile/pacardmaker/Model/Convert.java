@@ -18,5 +18,4 @@ public class Convert {
         float px = dp * (metrics.densityDpi / 160f);
         return Math.round(px);
     }
-
 }

@@ -2,6 +2,7 @@ package co.pamobile.pacore.Dialog;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -14,16 +15,13 @@ import co.pamobile.pacore.R;
 import co.pamobile.pacore.Storage.SharedPreference;
 
 public class Policy {
-    private static Policy INSTANCE = null;
-    Context context;
-    public static Policy getInstance(Context context){
-        if(INSTANCE == null){
-            INSTANCE = new Policy(context);
-        }
-        return INSTANCE;
+    private Activity context;
+    public static Policy getInstance(Activity context){
+        return new Policy(context);
     }
 
-    private Policy(Context context){
+
+    private Policy(Activity context){
         this.context = context;
     }
 
@@ -56,7 +54,7 @@ public class Policy {
     public void loadPrivacyPolicy() {
         final SharedPreference sharedPreference = new SharedPreference(context);
         if (sharedPreference.getPrivacyPolicyAcceptance(context).equals("")) {
-            new MaterialDialog.Builder(context)
+            MaterialDialog dialog = new MaterialDialog.Builder(context)
                     .title("Privacy Policy")
                     .content(getPrivacyPolicy())
                     .positiveText("ACCEPT")
@@ -72,11 +70,17 @@ public class Policy {
                         @Override
                         public void onNegative(MaterialDialog dialog) {
                             //decline, then exit app
-                            ((Activity)context).finish();
                             super.onNegative(dialog);
                         }
-                    })
-                    .show();
+                    }).build();
+            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    context.finish();
+                }
+            });
+
+            dialog.show();
         } else {
 
         }

@@ -70,8 +70,7 @@ public class MoreAppFragment extends Fragment {
 
     public void getMoreApp() {
         if(lisAllApp != null){
-            ArrayList<AppItem> listApp = new ArrayList<>(lisAllApp);
-            Iterator<AppItem> iterator = listApp.iterator();
+            Iterator<AppItem> iterator = lisAllApp.iterator();
             while(iterator.hasNext())
             {
                 AppItem value = iterator.next();

@@ -3,6 +3,7 @@ package co.pamobile.pacore;
 import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,6 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.pamobile.pacore.Navigation.NavDrawerItem;
 import co.pamobile.pacore.Navigation.NavDrawerListAdapter;
+import rebus.permissionutils.PermissionManager;
 
 /**
  * Created by admin on 4/3/18.
@@ -105,6 +107,11 @@ public abstract class BaseLeftMenuActivity extends AppCompatActivity {
         for (int i = 0; i < navMenuTitles.length; i++) {
             navDrawerItems.add(new NavDrawerItem(navMenuTitles[i], navMenuIcons.getResourceId(i, -1)));
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        PermissionManager.handleResult(this, requestCode, permissions, grantResults);
     }
 }
 

@@ -101,6 +101,7 @@ public class DialogExit extends Dialog {
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                dismiss();
                 Activity activity = (Activity) mContext;
                 activity.finish();
             }
