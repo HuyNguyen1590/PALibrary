@@ -1,8 +1,6 @@
 package co.pamobile.pacore.Dialog;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Color;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -11,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+
 import co.pamobile.pacore.R;
 import co.pamobile.pacore.Storage.SharedPreference;
 
@@ -71,14 +70,10 @@ public class Policy {
                         public void onNegative(MaterialDialog dialog) {
                             //decline, then exit app
                             super.onNegative(dialog);
+                            context.finish();
                         }
                     }).build();
-            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                @Override
-                public void onDismiss(DialogInterface dialog) {
-                    context.finish();
-                }
-            });
+
 
             dialog.show();
         } else {
