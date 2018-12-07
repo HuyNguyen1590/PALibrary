@@ -43,7 +43,6 @@ public class MainActivity extends BaseLeftMenuActivity {
         ft.add(R.id.content_main, moreAppFragment).commit();
         //CheckPermission.getInstance(this).RequestPermission(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION);
 
-
     }
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
