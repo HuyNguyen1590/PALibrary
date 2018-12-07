@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?><!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>versionCode</key>
+        <value>1</value>
+    </entry>
+    <entry>
+        <key>versionName</key>
+        <value>1.5.1</value>
+    </entry>
+    <entry>
+        <key>exampleCount</key>
+        <value>3</value>
+    </entry>
+    <entry>
+        <key>moreApps</key>
+        <value>[
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/ju-FPEkXNJIY9MX43m51VJNQxfJEtRiBFaFoSaQ0eCPxAVyn5fym3EAQAR6n2jUopA\\\",
+            \\\"name\\\": \\\"Dinosaur Sim\\\",
+            \\\"packageName\\\": \\\"co.pamobile.gamestudio.jurassicdinosaurs\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/oI1GZ83i_lPljk-j0LAm51regePegG8gj0ran0I-81zOiZR_Cs0XeomQUyep85DU3bs\\\",
+            \\\"name\\\": \\\"Fast Battery Charger\\\",
+            \\\"packageName\\\": \\\"co.pamobile.fastbatterycharger\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/9ldqrfQx3Y1lJZOCMGOrUz80dmmcIImFKjiAwGWK55bnMZ7hxcp6WY3Ow-vymZXXcA\\\",
+            \\\"name\\\": \\\"AddOns Maker\\\",
+            \\\"packageName\\\": \\\"co.pamobile.mcpe.addonsmaker\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/3T2Qm-R-lGDPwzLQ6i4-Dt1UBGIknyaGbxoXSIPDG4Og_KtbQ5y-iVpqoF_6b4OmrRE=s180-rw\\\",
+            \\\"name\\\": \\\"Notes\\\",
+            \\\"packageName\\\": \\\"co.pamobile.notes\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/XeyY_tHl9qlJBXeh30vDPrjm-Hx3FxCmvvjv6cbXcs_M2Fw1g02thhf4rKj0NRXEyDw\\\",
+            \\\"name\\\": \\\"Auto Build House\\\",
+            \\\"packageName\\\": \\\"co.pamobile.mcpe.autobuild\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/FBnngVrODLITe91lRAFV73yLR4eruqPHjl0JEqHB2baBUbzYIAnv5J8nBaILMjMHon1X\\\",
+            \\\"name\\\": \\\"Clash Royale Card\\\",
+            \\\"packageName\\\": \\\"co.pamobile.clashroyale.cardmaker\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/aDwIwoWWCE5KhvHhhMoeoDWhx83zR-XXsY3fxSpAW5-hAMTqZLBUrERv9O6lWCR9dPA\\\",
+            \\\"name\\\": \\\"YugiOh Card\\\",
+            \\\"packageName\\\": \\\"co.pamobile.yugioh.cardmaker\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/FSZnEBOWH3GVSpBTvRB2DkDWW4yLR_N6UzaJ7WBYrHXocju867DQ3l3CxFBqVQRUF9Q\\\",
+            \\\"name\\\": \\\"Pokemon Card\\\",
+            \\\"packageName\\\": \\\"co.pamobile.pokemon.cardmaker\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/5hf0zUfMyWlIF_YdMGHvpKcakjuJr8JYV_z0FEEH4RcaJAhT8Ul-bDutr_GCu9vuCg\\\",
+            \\\"name\\\": \\\"Hearthstone Card\\\",
+            \\\"packageName\\\": \\\"co.pamobile.hearthstone.cardmaker\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/TeerXybEQPeMIrTivfLrqC-Yv7VI7U-DYNxsCeCQ5rN0KVLROWnJC-yh-mnwfWJ2w9Q\\\",
+            \\\"name\\\": \\\"Mod Maker\\\",
+            \\\"packageName\\\": \\\"com.ultimategamestudio.mcpecenter.modmaker\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/o7GZVP8FHC-P2vNIJXQ3UHNHUz0E2wNIfz7BwwtXtAszE7Sg6XBWGuySruZvhXNTaQk\\\",
+            \\\"name\\\": \\\"Mods\\\",
+            \\\"packageName\\\": \\\"com.ultimategamestudio.mcpecenter.mods\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/jTmV2uf2WU7paqt-X1n8ZdJIfhK1poVjX9vcG_ZO9G1FrEIX5vsxHXYKRUCIqTDSmg\\\",
+            \\\"name\\\": \\\"Maps\\\",
+            \\\"packageName\\\": \\\"com.ultimategamestudio.mcpecenter.maps\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/ZFWsT0vPuJ4U8nQKwCbZ4yotERrMoqO1jbFrrdp8MDSISnS87i4l6abzGonvoL0gQ4A\\\",
+            \\\"name\\\": \\\"Resources Pack\\\",
+            \\\"packageName\\\": \\\"com.ultimategamestudio.mcpecenter.texture\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/hR7Els6kKH1UMthWLt9kOXRK9hIQS1haU4VH3A6I2ubzZw6GUZJ2rst8H0mJxrnRJBfq\\\",
+            \\\"name\\\": \\\"Skins\\\",
+            \\\"packageName\\\": \\\"com.ultimategamestudio.mcpecenter.skins\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/jiYSXyzoXUkiSDUG01D4lRwTfFfyBz_qRk_r2LVcqLZKf3WsRe9K_hr7t1X_HuFISw\\\",
+            \\\"name\\\": \\\"Seeds\\\",
+            \\\"packageName\\\": \\\"com.ultimategamestudio.mcpecenter.seeds\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/exJnVo6gxphwU8duYlfdZ6r0h-5iWr2BCY0q4f7rEWuBwqNniYMLxq_p6vmtg2Tu7aQ\\\",
+            \\\"name\\\": \\\"Game Tuner\\\",
+            \\\"packageName\\\": \\\"co.pamobile.gamelauncher\\\"
+            },
+            {
+            \\\"icon\\\": \\\"https://lh3.googleusercontent.com/ir8fq2Xo087Je4flms2PJyiYzd0W2q0HA5OKgu8wOx2w8Vkv_oFSraxOnFgzT12ChddE\\\",
+            \\\"name\\\": \\\"Pokemon Toolbox\\\",
+            \\\"packageName\\\": \\\"co.pamobile.pokemon.toolbox\\\"
+            }
+            ]
+        </value>
+    </entry>
+    <entry>
+        <key>feature_apps</key>
+        <value>[
+            {
+            \\\"icon\\\":
+            \\\"https://lh3.googleusercontent.com/ju-FPEkXNJIY9MX43m51VJNQxfJEtRiBFaFoSaQ0eCPxAVyn5fym3EAQAR6n2jUopA\\\",
+            \\\"name\\\": \\\"Dinosaur Sim\\\",
+            \\\"packageName\\\": \\\"co.pamobile.gamestudio.jurassicdinosaurs\\\"
+            },
+            {
+            \\\"icon\\\":
+            \\\"https://lh3.googleusercontent.com/oI1GZ83i_lPljk-j0LAm51regePegG8gj0ran0I-81zOiZR_Cs0XeomQUyep85DU3bs\\\",
+            \\\"name\\\": \\\"Fast Battery Charger\\\",
+            \\\"packageName\\\": \\\"co.pamobile.fastbatterycharger\\\"
+            },
+            {
+            \\\"icon\\\":
+            \\\"https://lh3.googleusercontent.com/9ldqrfQx3Y1lJZOCMGOrUz80dmmcIImFKjiAwGWK55bnMZ7hxcp6WY3Ow-vymZXXcA\\\",
+            \\\"name\\\": \\\"AddOns Maker\\\",
+            \\\"packageName\\\": \\\"co.pamobile.mcpe.addonsmaker\\\"
+            }
+            ]
+        </value>
+    </entry>
+    <entry>
+        <key>feature_banner</key>
+        <value>
+            {
+            \\\"url\\\": \\\"http://azminecraftskins.com/mcpe/banner/banner-pokemon.jpg\\\",
+            \\\"destination\\\": \\\"https://www.facebook.com/453084141556662/posts/930208050510933/\\\",
+            \\\"type\\\": \\\"facebook\\\"
+            }
+        </value>
+    </entry>
+</defaultsMap><!-- END xml_defaults -->

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>versionCode</key>
+        <value>1</value>
+    </entry>
+    <entry>
+        <key>exampleCount</key>
+        <value>3</value>
+    </entry>
+    <entry>
+        <key>moreApps</key>
+        <value>[ {
+            "icon\\\" :
+            \\\"https://lh3.googleusercontent.com/FSZnEBOWH3GVSpBTvRB2DkDWW4yLR_N6UzaJ7WBYrHXocju867DQ3l3CxFBqVQRUF9Q\\\",
+            \\\"name\\\" : \\\"Pokemon Card\\\",
+            \\\"packageName\\\" : \\\"co.pamobile.pokemon.cardmaker\\\"
+            }, {
+            \\\"icon\\\" :
+            \\\"https://lh3.googleusercontent.com/ir8fq2Xo087Je4flms2PJyiYzd0W2q0HA5OKgu8wOx2w8Vkv_oFSraxOnFgzT12ChddE\\\",
+            \\\"name\\\" : \\\"Pokemon Toolbox\\\",
+            \\\"packageName\\\" : \\\"co.pamobile.pokemon.toolbox\\\"
+            }, {
+            \\\"icon\\\" :
+            \\\"https://lh3.googleusercontent.com/TeerXybEQPeMIrTivfLrqC-Yv7VI7U-DYNxsCeCQ5rN0KVLROWnJC-yh-mnwfWJ2w9Q\\\",
+            \\\"name\\\" : \\\"Mod Maker\\\",
+            \\\"packageName\\\" : \\\"com.ultimategamestudio.mcpecenter.modmaker\\\"
+            }, {
+            \\\"icon\\\" :
+            \\\"https://lh3.googleusercontent.com/o7GZVP8FHC-P2vNIJXQ3UHNHUz0E2wNIfz7BwwtXtAszE7Sg6XBWGuySruZvhXNTaQk\\\",
+            \\\"name\\\" : \\\"Mods\\\",
+            \\\"packageName\\\" : \\\"com.ultimategamestudio.mcpecenter.mods\\\"
+            }, {
+            \\\"icon\\\" :
+            \\\"https://lh3.googleusercontent.com/XpmBf9f7s6Kt_z82lbJ4DmRqZ3Vyns46h2M86_F4AGZN1fzAcFcfOFsXuEmK9aOJBvE\\\",
+            \\\"name\\\" : \\\"Maps\\\",
+            \\\"packageName\\\" : \\\"com.ultimategamestudio.mcpecenter.maps\\\"
+            }, {
+            \\\"icon\\\" :
+            \\\"https://lh3.googleusercontent.com/4I-VE7YUTsuZ0QFP0lh59FdSfWTnJjSOI47aXbvGnq-TwQiKRTxDJAjpox2OWQcpYak\\\",
+            \\\"name\\\" : \\\"Textures\\\",
+            \\\"packageName\\\" : \\\"com.ultimategamestudio.mcpecenter.texture\\\"
+            }, {
+            \\\"icon\\\" :
+            \\\"https://lh3.googleusercontent.com/hR7Els6kKH1UMthWLt9kOXRK9hIQS1haU4VH3A6I2ubzZw6GUZJ2rst8H0mJxrnRJBfq\\\",
+            \\\"name\\\" : \\\"Skins\\\",
+            \\\"packageName\\\" : \\\"com.ultimategamestudio.mcpecenter.skins\\\"
+            }, {
+            \\\"icon\\\" :
+            \\\"https://lh3.googleusercontent.com/jiYSXyzoXUkiSDUG01D4lRwTfFfyBz_qRk_r2LVcqLZKf3WsRe9K_hr7t1X_HuFISw\\\",
+            \\\"name\\\" : \\\"Seeds\\\",
+            \\\"packageName\\\" : \\\"com.ultimategamestudio.mcpecenter.seeds\\\"
+            } ]
+        </value>
+    </entry>
+    <entry>
+        <key>feature_apps</key>
+        <value>[
+            {
+            \\\"icon\\\":
+            \\\"https://lh3.googleusercontent.com/ju-FPEkXNJIY9MX43m51VJNQxfJEtRiBFaFoSaQ0eCPxAVyn5fym3EAQAR6n2jUopA\\\",
+            \\\"name\\\": \\\"Dinosaur Sim\\\",
+            \\\"packageName\\\": \\\"co.pamobile.gamestudio.jurassicdinosaurs\\\"
+            },
+            {
+            \\\"icon\\\":
+            \\\"https://lh3.googleusercontent.com/oI1GZ83i_lPljk-j0LAm51regePegG8gj0ran0I-81zOiZR_Cs0XeomQUyep85DU3bs\\\",
+            \\\"name\\\": \\\"Fast Battery Charger\\\",
+            \\\"packageName\\\": \\\"co.pamobile.fastbatterycharger\\\"
+            },
+            {
+            \\\"icon\\\":
+            \\\"https://lh3.googleusercontent.com/9ldqrfQx3Y1lJZOCMGOrUz80dmmcIImFKjiAwGWK55bnMZ7hxcp6WY3Ow-vymZXXcA\\\",
+            \\\"name\\\": \\\"AddOns Maker\\\",
+            \\\"packageName\\\": \\\"co.pamobile.mcpe.addonsmaker\\\"
+            }
+            ]
+        </value>
+    </entry>
+    <entry>
+        <key>feature_banner</key>
+        <value>
+            {
+            \\\"url\\\": \\\"http://azminecraftskins.com/mcpe/banner/banner-pokemon.jpg\\\",
+            \\\"destination\\\": \\\"https://www.facebook.com/453084141556662/posts/930208050510933/\\\",
+            \\\"type\\\": \\\"facebook\\\"
+            }
+        </value>
+    </entry>
+</defaultsMap><!-- END xml_defaults -->
