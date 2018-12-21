@@ -20,8 +20,9 @@ public class Policy {
     }
     OnListenerAccept onListenerAccept;
 
-    public void setOnListenerAccept(OnListenerAccept onListenerAccept) {
+    public Policy setOnListenerAccept(OnListenerAccept onListenerAccept) {
         this.onListenerAccept = onListenerAccept;
+        return this;
     }
 
     private Policy(Activity context){
@@ -68,7 +69,10 @@ public class Policy {
                             //accepted, then save date
                             sharedPreference.setPrivacyPolicyAcceptance(context);
                             super.onPositive(dialog);
-                            onListenerAccept.onAccept();
+                            if(onListenerAccept!=null){
+                                onListenerAccept.onAccept();
+                            }
+
                         }
 
                         @Override
@@ -82,7 +86,9 @@ public class Policy {
 
             dialog.show();
         } else {
-            onListenerAccept.onAccept();
+            if(onListenerAccept!=null){
+                onListenerAccept.onAccept();
+            }
         }
     }
 

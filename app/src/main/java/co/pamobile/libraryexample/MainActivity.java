@@ -52,7 +52,8 @@ public class MainActivity extends BaseLeftMenuActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Policy.getInstance(this).loadPrivacyPolicy();
+        Policy.getInstance(this).setOnListenerAccept(() -> {}).loadPrivacyPolicy();
+
     }
 
     public static final String FEATURE_APPS = "[{\"icon\":\"https://lh3.googleusercontent.com/ju-FPEkXNJIY9MX43m51VJNQxfJEtRiBFaFoSaQ0eCPxAVyn5fym3EAQAR6n2jUopA\",\"name\":\"Dinosaur Sim\",\"packageName\":\"co.pamobile.gamestudio.jurassicdinosaurs\"},{\"icon\":\"https://lh3.googleusercontent.com/oI1GZ83i_lPljk-j0LAm51regePegG8gj0ran0I-81zOiZR_Cs0XeomQUyep85DU3bs\",\"name\":\"Fast Battery Charger\",\"packageName\":\"co.pamobile.fastbatterycharger\"},{\"icon\":\"https://lh3.googleusercontent.com/9ldqrfQx3Y1lJZOCMGOrUz80dmmcIImFKjiAwGWK55bnMZ7hxcp6WY3Ow-vymZXXcA\",\"name\":\"AddOns Maker\",\"packageName\":\"co.pamobile.mcpe.addonsmaker\"}]";
