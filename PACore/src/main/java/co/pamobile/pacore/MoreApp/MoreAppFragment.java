@@ -12,11 +12,9 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import co.pamobile.pacore.Dialog.AppItem;
@@ -70,18 +68,15 @@ public class MoreAppFragment extends Fragment {
 
     public void getMoreApp() {
         if(lisAllApp != null){
-            Iterator<AppItem> iterator = lisAllApp.iterator();
-            while(iterator.hasNext())
-            {
-                AppItem value = iterator.next();
-
-                if (activity.getPackageName().equals(value.getPackageName()))
+            List<AppItem> list = new LinkedList<>(lisAllApp);
+            for (AppItem item : list){
+                if (activity.getPackageName().equals(item.getPackageName()))
                 {
-                    iterator.remove();
+                    list.remove(item);
                     break;
                 }
             }
-
+           lisAllApp = list;
         }else{
             lisAllApp = new ArrayList<>();
         }
