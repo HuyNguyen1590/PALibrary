@@ -9,7 +9,7 @@ td {
 
 ## Xử lý mảng 
 
-<div style="font-size: 50px">
+<div style="font-size: 10px">
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
