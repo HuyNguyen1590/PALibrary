@@ -1,11 +1,4 @@
 
-<link rel="stylesheet" type="text/css" media="all" href="URL" />
-<style>
-td {
-  font-size: 11px
-}
-
-</style> 
 
 ## Xử lý mảng 
 
