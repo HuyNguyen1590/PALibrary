@@ -1,5 +1,5 @@
 
-## Xử lý mảng 
+## Array 
 
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
