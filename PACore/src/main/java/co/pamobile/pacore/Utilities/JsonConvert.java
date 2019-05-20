@@ -32,7 +32,7 @@ public class JsonConvert {
     public static String HashMapToJson(Object obj){
         return gson.toJson(obj);
     }
-   public static HashMap<String,String> JsonToHashMap(String jsonString){
+    public static HashMap<String,String> JsonToHashMap(String jsonString){
        Gson gson = new Gson();
        Type stringStringMap = new TypeToken<Map<String, String>>(){}.getType();
        HashMap<String,String> map = gson.fromJson(jsonString, stringStringMap);

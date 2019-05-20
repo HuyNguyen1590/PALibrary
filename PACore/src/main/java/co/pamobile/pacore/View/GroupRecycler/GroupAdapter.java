@@ -1,7 +1,6 @@
 package co.pamobile.pacore.View.GroupRecycler;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,8 +18,6 @@ import co.pamobile.pacore.View.RecyclerItemClickListener;
  */
 
 public class GroupAdapter extends RecycleViewAdapterPattern {
-
-
 
     public GroupAdapter(Context mContext, ArrayList<Object> dataSource) {
         super(mContext, dataSource);

@@ -41,8 +41,6 @@ public class MoreAppFragment extends Fragment {
         this.bgImage = bgImage;
     }
 
-
-
     int bgImage = -1;
 
     @Override
