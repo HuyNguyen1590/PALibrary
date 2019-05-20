@@ -5,13 +5,11 @@ td {
   font-size: 11px
 }
 
-th {
-  font-size: 12px
-}
 </style> 
 
 ## Xử lý mảng 
 
+<div style="font-size: 50px">
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -23,7 +21,7 @@ th {
 | toArrayList(List&lt;T&gt; list) | Chuyển từ List&lt;Object&gt; sang ArrayList&lt;Object&gt; | List&lt;AppItem&gt;  arrAppItem = new ArrayList&lt;&gt;();<br/>ArrayList&lt;AppItem&gt; arrResult = **`ArrayConvert.toArrayList(arrAppItem);`**  |
 | toArrayList(T[] list) | Chuyển từ Array sang ArrayList | AppItem[]  arrAppItem = new AppItem[]{app1, app2};<br/>ArrayList&lt;AppItem&gt; arrResult = **`ArrayConvert.toArrayList(arrAppItem)`**;  |
 
-
+</div>
 
 ## Bitmap
 
