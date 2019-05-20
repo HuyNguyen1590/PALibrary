@@ -1,9 +1,14 @@
+
+<link rel="stylesheet" type="text/css" media="all" href="URL" />
+<style>
 td {
-font-size: 11px
+  font-size: 11px
 }
+
 th {
-font-size: 12px
+  font-size: 12px
 }
+</style> 
 
 ## Xử lý mảng 
 
