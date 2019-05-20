@@ -1,12 +1,3 @@
-<link rel="stylesheet" type="text/css" media="all" href="URL" />
-<style type='text/css'>
-td {
-  font-size: 11px
-}
-th {
-  font-size: 12px
-}
-</style> 
 
 ## Xử lý mảng 
 
