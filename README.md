@@ -1,7 +1,26 @@
+# PACore Library
+![](https://camo.githubusercontent.com/d4e0f63e9613ee474a7dfdc23c240b9795712c96/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e737667)
 
-## Array 
+## Cài đặt
 
+``` java
+implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
+```
 
+## Nội dung
+* [Array](#array)
+* [Bitmap](#bitmap)
+* [Json](#json)
+* [Layout](#layout)
+* [Process File](#process_file)
+* [Utils](#utils)
+* [DefaultFunction Class](#default_function)
+
+ <a name="array"></a>
+ 
+### Array 
+
+ 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
 | toArray(ArrayList&lt;T&gt; list) | Chuyển từ ArrayList sang Array |  ArrayList&lt;AppItem&gt; arrayList = new ArrayList&lt;&gt;(); <br/> AppItem[] arrResult = **`ArrayConvert.toArray(arrayList);`** |
@@ -13,8 +32,8 @@
 | toArrayList(T[] list) | Chuyển từ Array sang ArrayList | AppItem[]  arrAppItem = new AppItem[]{app1, app2};<br/>ArrayList&lt;AppItem&gt; arrResult = **`ArrayConvert.toArrayList(arrAppItem)`**;  |
 
 
-
-## Bitmap
+<a name="bitmap"></a>
+### Bitmap
 
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
@@ -27,8 +46,8 @@
 
 
 
-
-## Json
+<a name="json"></a>
+### Json
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -40,8 +59,8 @@
 
 
 
-
-## Layout
+<a name="layout"></a>
+### Layout
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -52,8 +71,8 @@
 | getActionBarHeight(Activity mActivity) | Phương thức trả về height của action bar | intheight = **`LayoutParams.getActionBarHeight(mActivity);`** |
 
 
-
-## Process File
+<a name="process_file"></a>
+### Process File
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -63,8 +82,8 @@
 | openImage(Context context, String path) | Mở hình ảnh từ đường dẫn truyền vào | **`ProcessFile.openImage(mContext, path);`** |
 
 
-
-## Utils
+<a name="utils"></a>
+### Utils
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -74,8 +93,8 @@
 | convertDpToPixel(floatdp) | Nhận vào giá trị Dp trả về Pixel | **`Utils.convertDpToPixel(100)`** |
 
 
-
-## DefaultFunction Class
+<a name="default_function"></a>
+### DefaultFunction Class
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
