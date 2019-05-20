@@ -103,3 +103,7 @@ implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
 | checkCodeVersion(intversionCode) | Kiểm tra nếu version code hiện tại nhỏ hơn version code được truyền vào thì show dialog yêu cầu người dùng update | **`DefaultFunction.getInstance(this).checkCodeVersion(newVrCode)`** |
 | confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction. getInstance(this).confirmExit()`** |
 | overrideFonts(finalView v,Typeface typeface) | Override lại fonts của view được truyền vào | **`DefaultFunction.getInstance(this).overrideFonts(view , typeface)`** |
+
+Liencse
+===
+Copyright 2019 PAMobile Company
