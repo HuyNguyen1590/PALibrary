@@ -15,6 +15,8 @@ implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
 * [Process File](#process_file)
 * [Utils](#utils)
 * [DefaultFunction Class](#default_function)
+* [Convert](#convert)
+* [SharedPreference](#shared_preference)
 
  <a name="array"></a>
  
@@ -89,8 +91,6 @@ implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
 | --- | --- | --- |
 | openFacebookURL(Activity mActivity, String fbURL) | Mở Facebook từ url truyền vào | **`Utils.openFacebookURL(mActivity, fbURL)`** |
 | openYouTubeURL(Activity mActivity, String YouTubeURL) | Mở Youtube từ url truyền vào | **`Utils.openYouTubeURL( mActivity, youtubeURL)`** |
-| convertPixelsToDp(floatpx) | Nhận vào giá trị pixel trả về Dp | **`Utils.convertPixelsToDp(100)`** |
-| convertDpToPixel(floatdp) | Nhận vào giá trị Dp trả về Pixel | **`Utils.convertDpToPixel(100)`** |
 
 
 <a name="default_function"></a>
@@ -103,6 +103,33 @@ implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
 | checkCodeVersion(intversionCode) | Kiểm tra nếu version code hiện tại nhỏ hơn version code được truyền vào thì show dialog yêu cầu người dùng update | **`DefaultFunction.getInstance(this).checkCodeVersion(newVrCode)`** |
 | confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction. getInstance(this).confirmExit()`** |
 | overrideFonts(finalView v,Typeface typeface) | Override lại fonts của view được truyền vào | **`DefaultFunction.getInstance(this).overrideFonts(view , typeface)`** |
+
+<a name="convert"></a>
+### Convert
+
+| **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
+| --- | --- | --- |
+| convertPixelsToDp(float px)  | Nhận vào giá trị pixel trả về Dp | **`Utils.convertPixelsToDp(value)`**  |
+| convertDpToPixel(float dp) | Nhận vào giá trị Dp trả về Pixel | **`Utils.convertDpToPixel(value)`**  |
+
+
+
+** **
+
+
+<a name="shared_preference"></a>
+### SharedPreference
+
+| **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
+| --- | --- | --- |
+|  saveDate(String key,Date date) | Lưu Date vào SharedPreferences | **`SharedPreference._getInstance_(this).saveDate("UPDATE_DATE",new Date());`** |
+| getDate(String key) | Truyền vào key đã lưu trước đó để lấy ra date từ SharedPreferences | **`SharedPreference._getInstance_(this).getDate("UPDATE_DATE");`** |
+| saveInt( String key, int num) | Lưu một số vào SharedPreferences | **`SharedPreference._getInstance_(this).saveInt("KEY_NAME", value);`** |
+| getInt(String key) | Truyền vào key để lấy ra số đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getInt("KEY_NAME");`** |
+| saveBoolean( String key, boolean value) | Lưu một giá trị kiểu boolean vào SharedPreferences | **`SharedPreference._getInstance_(this).saveBoolean("KEY_NAME", true);`** |
+| getBoolean(String key) | Truyền vào key để lấy giá trị boolean đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getBoolean("KEY_NAME");`** |
+| saveString( String key, String value) | Lưu string vào SharedPreferences | **`SharedPreference._getInstance_(this).saveString("KEY_NAME", "ABC");`** |
+| getString(String key) | Truyền vào key để lấy giá trị string đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getString("KEY_NAME");`** |
 
 Liencse
 ===
