@@ -44,10 +44,10 @@ dependencies {
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
 | getBitmapFromAssets(Context context, String path) | Trả về bitmap của một hình ảnh trong thư mục assets từ đường dẫn do người dùng truyền vào  | Bitmap mBitmap =   **`BitmapClass. getBitmapFromAssets(mContext,path);`** |
-| getBitmapFromURL(String src) | Trả về  bitmap từ url do người dùng truyền vào | Bitmap mBitmap =   **`BitmapClass.getBitmapFromURL(url);`** |
-| loadBitmapFromView(View v) | Tạo và trả về bitmap từ view được truyền vào | Bitmap bitmap = **`BitmapClass.loadBitmapFromView(view)`**; |
-| loadBitmapFromFile(String path) | Đọc một file hình ảnh và trả về bitmap từ đường dẫn truyền vào | Bitmap mResult = **`BitmapClass.loadBitmapFromFile(path)`**; |
-| AsyncGettingBitmapFromUrl() | Class load async lấy bitmap từ url | Bitmap mResult  =  new **`BitmapClass.AsyncGettingBitmapFromUrl().execute(url).get();`** |
+| getBitmapFromURL(String src) | Trả về  bitmap từ url do người dùng truyền vào | Bitmap mBitmap =   **`BitmapClass<br/>.getBitmapFromURL(url);`** |
+| loadBitmapFromView(View v) | Tạo và trả về bitmap từ view được truyền vào | Bitmap bitmap = **`BitmapClass<br/>.loadBitmapFromView(view)`**; |
+| loadBitmapFromFile(String path) | Đọc một file hình ảnh và trả về bitmap từ đường dẫn truyền vào | Bitmap mResult = **`BitmapClass<br/>.loadBitmapFromFile(path)`**; |
+| AsyncGettingBitmapFromUrl() | Class load async lấy bitmap từ url | Bitmap mResult  =  new **`BitmapClass<br/>.AsyncGettingBitmapFromUrl().execute(url).get();`** |
 
 
 
@@ -94,6 +94,7 @@ dependencies {
 | --- | --- | --- |
 | openFacebookURL(Activity mActivity, String fbURL) | Mở Facebook từ url truyền vào | **`Utils.openFacebookURL(mActivity, fbURL)`** |
 | openYouTubeURL(Activity mActivity, String YouTubeURL) | Mở Youtube từ url truyền vào | **`Utils.openYouTubeURL( mActivity, youtubeURL)`** |
+| showDialog(Context context, String title, String message) | Hiển thị một dialog đơn giản | **`Utils.showDialog(mCont, title, message);`** |
 
 
 <a name="default_function"></a>
