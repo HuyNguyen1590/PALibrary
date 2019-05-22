@@ -4,7 +4,9 @@
 ## Cài đặt
 
 ``` java
-implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
+dependencies {
+     implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
+}
 ```
 
 ## Nội dung
@@ -17,6 +19,7 @@ implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
 * [DefaultFunction Class](#default_function)
 * [Convert](#convert)
 * [SharedPreference](#shared_preference)
+* [Permission](#permission)
 
  <a name="array"></a>
  
@@ -130,6 +133,14 @@ implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
 | getBoolean(String key) | Truyền vào key để lấy giá trị boolean đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getBoolean("KEY_NAME");`** |
 | saveString( String key, String value) | Lưu string vào SharedPreferences | **`SharedPreference._getInstance_(this).saveString("KEY_NAME", "ABC");`** |
 | getString(String key) | Truyền vào key để lấy giá trị string đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getString("KEY_NAME");`** |
+
+
+<a name="permisstion"></a>
+### Permission
+
+| **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
+| --- | --- | --- |
+|  RequestPermission(final String... permissions) | Yêu cầu quyền truy cập trên thiết bị | String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};<br/>**`CheckPermission.getInstance(this).RequestPermission(permissions);`** |
 
 Liencse
 ===
