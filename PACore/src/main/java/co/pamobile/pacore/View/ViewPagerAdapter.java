@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import co.pamobile.pacore.View.Pattern.FragmentPattern;
+
 /**
  * Created by KhoaVin on 2/15/2017.
  */

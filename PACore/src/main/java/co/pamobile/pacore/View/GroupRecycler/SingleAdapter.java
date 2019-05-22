@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import co.pamobile.pacore.Utilities.ArrayConvert;
-import co.pamobile.pacore.View.RecycleViewAdapterPattern;
+import co.pamobile.pacore.View.Pattern.RecycleViewAdapterPattern;
 import co.pamobile.pacore.View.RecyclerItemClickListener;
 import co.pamobile.pacore.R;
 

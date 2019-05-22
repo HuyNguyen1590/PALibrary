@@ -3,15 +3,8 @@ package co.pamobile.pacore.Storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 /**
@@ -19,80 +12,32 @@ import java.util.Locale;
  */
 public class SharedPreference<T> {
     public static final String PREFS_NAME = "APP_NAME";
-    public static final String CARD = "CARD";
     public static final String RATED_ITEM = "RATED_ITEM";
     public static final String UPLOAD_ITEM = "UPLOAD_ITEM";
     public static final String NUM_OPEN = "NUMBER OPEN";
     public static final String TIME_UPLOAD = "TIME_UPLOAD";
     public static final String ACCEPT_POLICY = "ACCEPT POLICY";
+    public static final String RATE_STATS = "RATE_STATS";
+    public static final String VIEW_COUNT = "VIEW_COUNT";
+
     Context context;
+
+    private static SharedPreference INSTANCE = null;
+
+    public static SharedPreference getInstance(Context context){
+        if(INSTANCE == null){
+            INSTANCE = new SharedPreference(context);
+        }
+        return INSTANCE;
+    }
 
     public SharedPreference(Context context) {
         super();
         this.context = context;
     }
 
-    // This four methods are used for maintaining card.
-
-    public void saveCard(List<T> itemList, String KEY) {
-        SharedPreferences settings;
-        SharedPreferences.Editor editor;
-
-        settings = context.getSharedPreferences(PREFS_NAME,
-                Context.MODE_PRIVATE);
-        editor = settings.edit();
-        Gson gson = new Gson();
-        String jsonCard = gson.toJson(itemList);
-        editor.putString(KEY, jsonCard);
-        editor.commit();
-    }
-
-    public void addCard(T item, String KEY) {
-        List<T> card = getCard(KEY);
-        if (card == null)
-            card = new ArrayList<T>();
-        card.add(item);
-        saveCard(card, KEY);
-    }
-
-    public void removeCard(T item, String KEY) {
-        ArrayList<T> cards = getCard(KEY);
-        if (cards != null) {
-            for (T c : cards) {
-                if (c.equals(item)) {
-                    cards.remove(c);
-                    break;
-                }
-            }
-            saveCard(cards, KEY);
-        }
-    }
-
-    public ArrayList<T> getCard(String KEY) {
-        SharedPreferences settings;
-        List<T> cards;
-
-        settings = context.getSharedPreferences(PREFS_NAME,
-                Context.MODE_PRIVATE);
-
-        if (settings.contains(KEY)) {
-            String jsonCard = settings.getString(KEY, null);
-            Type collectionType = new TypeToken<Collection<T>>() {
-            }.getType();
-            Gson gson = new Gson();
-            List<T> cardItems = gson.fromJson(jsonCard, collectionType);
-
-            cards = cardItems;
-            cards = new ArrayList<T>(cards);
-        } else
-            return null;
-
-        return (ArrayList<T>) cards;
-    }
-
-
     //these methods are used for showing privacy policy
-    public void setPrivacyPolicyAcceptance(Context context){
+    public void setPrivacyPolicyAcceptance(){
         SharedPreferences settings;
         SharedPreferences.Editor editor;
 
@@ -107,7 +52,7 @@ public class SharedPreference<T> {
         editor.apply();
     }
 
-    public String getPrivacyPolicyAcceptance(Context context){
+    public String getPrivacyPolicyAcceptance(){
         SharedPreferences settings;
         String acceptedDate;
 
@@ -118,44 +63,40 @@ public class SharedPreference<T> {
         return acceptedDate;
     }
 
-    public void saveDate(Context context, Date num){
+    public void saveDate(String key,Date date){
         SharedPreferences settings;
         SharedPreferences.Editor editor;
 
         settings = context.getSharedPreferences(PREFS_NAME,
                 Context.MODE_PRIVATE);
         editor = settings.edit();
-
-        editor.putLong("Date", num.getTime());
-
+        editor.putLong(key, date.getTime());
         editor.apply();
     }
 
-    public Date getDate(Context context){
+    public Date getDate(String key){
         SharedPreferences settings;
         long num;
         settings = context.getSharedPreferences(PREFS_NAME,
                 Context.MODE_PRIVATE);
-        num = settings.getLong("Date", 0);
+        num = settings.getLong(key, 0);
         Date date = new Date();
         date.setTime(num);
         return date;
     }
 
-    public void saveNum(int num, String key){
+    public void saveInt( String key, int num){
         SharedPreferences settings;
         SharedPreferences.Editor editor;
 
         settings = context.getSharedPreferences(PREFS_NAME,
                 Context.MODE_PRIVATE);
         editor = settings.edit();
-
         editor.putInt(key, num);
-
         editor.apply();
     }
 
-    public int getNum(String key){
+    public int getInt(String key){
         SharedPreferences settings;
         int num;
         settings = context.getSharedPreferences(PREFS_NAME,
@@ -163,7 +104,48 @@ public class SharedPreference<T> {
         num = settings.getInt(key, 0);
         return num;
     }
+
+    public void saveBoolean( String key, boolean value){
+        SharedPreferences settings;
+        SharedPreferences.Editor editor;
+
+        settings = context.getSharedPreferences(PREFS_NAME,
+                Context.MODE_PRIVATE);
+        editor = settings.edit();
+        editor.putBoolean(key, value);
+        editor.apply();
+    }
+
+    public boolean getBoolean(String key){
+        SharedPreferences settings;
+        boolean num;
+        settings = context.getSharedPreferences(PREFS_NAME,
+                Context.MODE_PRIVATE);
+        num = settings.getBoolean(key, false);
+        return num;
+    }
+
+    public void saveString( String key, String value){
+        SharedPreferences settings;
+        SharedPreferences.Editor editor;
+
+        settings = context.getSharedPreferences(PREFS_NAME,
+                Context.MODE_PRIVATE);
+        editor = settings.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    public String getString(String key){
+        SharedPreferences settings;
+
+        settings = context.getSharedPreferences(PREFS_NAME,
+                Context.MODE_PRIVATE);
+        return settings.getString(key, null);
+    }
 }
+
+
 
 
 

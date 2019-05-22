@@ -56,8 +56,8 @@ public class Policy {
     }
 
     public void loadPrivacyPolicy() {
-        final SharedPreference sharedPreference = new SharedPreference(context);
-        if (sharedPreference.getPrivacyPolicyAcceptance(context).equals("")) {
+       // final SharedPreference sharedPreference = new SharedPreference(context);
+        if (SharedPreference.getInstance(context).getPrivacyPolicyAcceptance().equals("")) {
             MaterialDialog dialog = new MaterialDialog.Builder(context)
                     .title("Privacy Policy")
                     .content(getPrivacyPolicy())
@@ -67,7 +67,7 @@ public class Policy {
                         @Override
                         public void onPositive(MaterialDialog dialog) {
                             //accepted, then save date
-                            sharedPreference.setPrivacyPolicyAcceptance(context);
+                            SharedPreference.getInstance(context).setPrivacyPolicyAcceptance();
                             super.onPositive(dialog);
                             if(onListenerAccept!=null){
                                 onListenerAccept.onAccept();
@@ -93,11 +93,11 @@ public class Policy {
     }
 
     public void showAcceptedPolicy(){
-        final SharedPreference sharedPreference = new SharedPreference(context);
+//        final SharedPreference sharedPreference = new SharedPreference(context);
         new MaterialDialog.Builder(context)
                 .title("Privacy Policy")
                 .content(getPrivacyPolicy())
-                .positiveText("You accepted on " + sharedPreference.getPrivacyPolicyAcceptance(context))
+                .positiveText("You accepted on " + SharedPreference.getInstance(context).getPrivacyPolicyAcceptance())
                 .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {

@@ -182,7 +182,6 @@ public class DraggableImageView extends ImageView {
 		mOperationStack.push(new BitmapOperationMap(dBitmap, null, BitmapOperationMap.OPERATION.NEW));
 		mOperationStack.push(new BitmapOperationMap(dBitmap, dBitmap.getCurrentMatrix(), BitmapOperationMap.OPERATION.ADD));
 		mOverlayBitmaps.add(dBitmap);
-
 	}
 
 	private int getActiveBitmap(float event_x, float event_y) {

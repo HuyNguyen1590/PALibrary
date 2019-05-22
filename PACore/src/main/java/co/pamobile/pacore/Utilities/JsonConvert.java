@@ -15,13 +15,11 @@ public class JsonConvert {
     public static Gson gson = new Gson();
     public static String convertToJson(Object obj)
     {
-        String json = gson.toJson(obj);
-        return json;
+        return gson.toJson(obj);
     }
     public static Object convertFromJson(String jsonString)
     {
-        Object obj = gson.fromJson(jsonString, Object.class);
-        return obj;
+        return gson.fromJson(jsonString, Object.class);
     }
     public static <T> T[] getArray(String jsonString, Class<T[]> tClass)
     {
@@ -32,7 +30,7 @@ public class JsonConvert {
     public static String HashMapToJson(Object obj){
         return gson.toJson(obj);
     }
-    public static HashMap<String,String> JsonToHashMap(String jsonString){
+    public static HashMap<String,String> jsonToHashMap(String jsonString){
        Gson gson = new Gson();
        Type stringStringMap = new TypeToken<Map<String, String>>(){}.getType();
        HashMap<String,String> map = gson.fromJson(jsonString, stringStringMap);

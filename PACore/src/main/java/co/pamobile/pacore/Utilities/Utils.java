@@ -2,61 +2,27 @@ package co.pamobile.pacore.Utilities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.text.format.DateFormat;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.support.v7.app.AlertDialog;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Date;
 import java.util.TimeZone;
 
 /**
- * Created by Dev04 on 11/13/2017.
+ * Created by Dev04 on 12/9/2016.
  */
 
 public class Utils {
     public static void showMessage(Activity mActivity, String mMessage) {
         Toast.makeText(mActivity, mMessage, Toast.LENGTH_LONG).show();
     }
-
-    public static Bitmap getBitmapFromURL(String src) {
-        try {
-            URL url = new URL(src);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setDoInput(true);
-            connection.connect();
-            InputStream input = connection.getInputStream();
-            Bitmap myBitmap = BitmapFactory.decodeStream(input);
-            return myBitmap;
-        } catch (IOException e) {
-            // Log exception
-            return null;
-        }
-    }
-
-    public static Bitmap loadBitmap(String url) {
-        File image = new File(url);
-        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-        Bitmap bitmap = BitmapFactory.decodeFile(image.getAbsolutePath(), bmOptions);
-        return bitmap;
+    public static long my_time_in() {
+        TimeZone london = TimeZone.getTimeZone("Europe/London");
+        long now = System.currentTimeMillis();
+        return now + london.getOffset(now);
     }
 
     public static void openFacebookURL(Activity mActivity, String fbURL) {
@@ -72,7 +38,6 @@ public class Utils {
             mActivity.startActivity(intent);
         }
     }
-
     public static void openYouTubeURL(Activity mActivity, String YouTubeURL) {
         try {
             Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -86,7 +51,6 @@ public class Utils {
             mActivity.startActivity(intent);
         }
     }
-
     public static String getFacebookPageURL(Context context, String fbURL) {
         PackageManager packageManager = context.getPackageManager();
         try {
@@ -101,132 +65,19 @@ public class Utils {
         }
     }
 
-    public static Bitmap getBitmapFromAssets(Context context, String fileName) {
-        AssetManager assetManager = context.getAssets();
-        Bitmap bitmap = null;
-        InputStream istr = null;
-        try {
-            istr = assetManager.open(fileName);
-            bitmap = BitmapFactory.decodeStream(istr);
-        } catch (IOException ignored) {
-
-        }
-        return bitmap;
+    public static void showDialog(Context context, String title, String message) {
+        new AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .setCancelable(false)
+                .show();
     }
 
-    public static long my_time_in() {
-        TimeZone london = TimeZone.getTimeZone("Europe/London");
-        long now = System.currentTimeMillis();
-        return now + london.getOffset(now);
-    }
-
-    public static String save(Bitmap bitmap, String imgName, Context context) {
-
-        String path = getFolderPath() + "/" + imgName + ".png";
-        Log.i("Save To Storage", "Path: " + path);
-        try {
-            File file = new File(path);
-            if (file.exists()) {
-                path = getFolderPath() + "/" + imgName + DateFormat.format("yyyyMMdd_kkmmss", new Date()) + ".png";
-            }
-            FileOutputStream out = new FileOutputStream(path);
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                final Intent scanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                final Uri contentUri = Uri.fromFile(file);
-                scanIntent.setData(contentUri);
-                context.sendBroadcast(scanIntent);
-            } else {
-                context.sendBroadcast(new Intent(
-                        Intent.ACTION_MEDIA_MOUNTED,
-                        Uri.parse(path)));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return path;
-    }
-
-    public static String getFolderPath() {
-        String lvl1 = "Pictures";
-        String lvl2 = "Card Maker";
-
-        File folderLvl1 = checkPath(Environment.getExternalStorageDirectory(), lvl1);
-        File folderLvl2 = checkPath(folderLvl1, lvl2);
-
-        return folderLvl2.getPath();
-    }
-
-    private static File checkPath(File pathLvl1, String lvl2) {
-        File pathLvl2 = new File(pathLvl1, lvl2);
-        if (!pathLvl2.exists()) {
-            pathLvl2.mkdir();
-        }
-        return pathLvl2;
-    }
-
-    public static String save(Bitmap bitmap, Context context) {
-        return save(bitmap, generateImageName(), context);
-    }
-
-    public static String generateImageName() {
-        return "IMG_" + DateFormat.format("yyyyMMdd_kkmmss", new Date());
-    }
-
-    public static float convertPixelsToDp(float px) {
-        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-        float dp = px / (metrics.densityDpi / 160f);
-        return Math.round(dp);
-    }
-
-    public static float convertDpToPixel(float dp) {
-        DisplayMetrics metrics = Resources.getSystem().getDisplayMetrics();
-        float px = dp * (metrics.densityDpi / 160f);
-        return Math.round(px);
-    }
-
-    public void setWidthHeightAndMargin(View view, int width, int height, int top, int bottom, int left, int right) {
-        FrameLayout.LayoutParams layoutParams = null;
-        layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
-        if (layoutParams == null) {
-            layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        }
-        layoutParams.width = width;
-        layoutParams.height = height;
-        layoutParams.topMargin = top;
-        layoutParams.bottomMargin = bottom;
-        layoutParams.rightMargin = right;
-        layoutParams.leftMargin = left;
-        //layoutParams.gravity = Gravity.TOP|Gravity.RIGHT;
-        view.setLayoutParams(layoutParams);
-    }
-
-
-    public void setParamMargin(View view, int top, int bottom, int left, int right) {
-        FrameLayout.LayoutParams layoutParams = null;
-        layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
-        if (layoutParams == null) {
-            layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        }
-        layoutParams.topMargin = top;
-        layoutParams.bottomMargin = bottom;
-        layoutParams.rightMargin = right;
-        layoutParams.leftMargin = left;
-        //layoutParams.gravity = Gravity.TOP|Gravity.RIGHT;
-        view.setLayoutParams(layoutParams);
-    }
-
-    public void setParamWidthHeight(View view, int width, int height) {
-        FrameLayout.LayoutParams layoutParams = null;
-        layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
-        if (layoutParams == null) {
-            layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        }
-        layoutParams.width = width;
-        layoutParams.height = height;
-        //layoutParams.gravity = Gravity.TOP|Gravity.RIGHT;
-        view.setLayoutParams(layoutParams);
-    }
 
 }

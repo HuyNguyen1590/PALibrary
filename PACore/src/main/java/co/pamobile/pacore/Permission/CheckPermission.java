@@ -1,8 +1,6 @@
 package co.pamobile.pacore.Permission;
 
-import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.support.v7.app.AlertDialog;
@@ -16,12 +14,8 @@ import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
-import co.pamobile.pacore.Dialog.Policy;
-import co.pamobile.pacore.R;
-import co.pamobile.pacore.Utilities.ArrayConvert;
-import co.pamobile.pacore.Utilities.Utils;
+import co.pamobile.pacore.Utilities.Convert;
 import rebus.permissionutils.AskAgainCallback;
 import rebus.permissionutils.FullCallback;
 import rebus.permissionutils.PermissionEnum;
@@ -99,7 +93,7 @@ public class CheckPermission {
         TextView view = new TextView(activity);
         view.setText(Html.fromHtml(permissionName.toString()));
         view.setMovementMethod(LinkMovementMethod.getInstance());
-        view.setPadding((int) Utils.convertDpToPixel(16), (int) Utils.convertDpToPixel(10), (int) Utils.convertDpToPixel(0), (int) Utils.convertDpToPixel(0));
+        view.setPadding((int) Convert.convertDpToPixel(16), (int) Convert.convertDpToPixel(10), (int) Convert.convertDpToPixel(0), (int) Convert.convertDpToPixel(0));
 
         return new AlertDialog.Builder(activity)
                 .setTitle("Permission needed")

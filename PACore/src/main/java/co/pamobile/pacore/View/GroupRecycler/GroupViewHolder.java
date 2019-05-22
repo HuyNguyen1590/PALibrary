@@ -1,13 +1,8 @@
 package co.pamobile.pacore.View.GroupRecycler;
 
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
-import co.pamobile.pacore.R;
-import co.pamobile.pacore.View.ViewHolderPattern;
-import butterknife.BindView;
+import co.pamobile.pacore.View.Pattern.ViewHolderPattern;
 
 /**
  * Created by Dev02 on 4/17/2017.
