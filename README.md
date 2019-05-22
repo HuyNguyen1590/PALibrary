@@ -24,7 +24,7 @@ dependencies {
  <a name="array"></a>
  
 ### Array 
-
+***
  
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -39,7 +39,7 @@ dependencies {
 
 <a name="bitmap"></a>
 ### Bitmap
-
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -53,6 +53,7 @@ dependencies {
 
 <a name="json"></a>
 ### Json
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -66,6 +67,7 @@ dependencies {
 
 <a name="layout"></a>
 ### Layout
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -78,6 +80,7 @@ dependencies {
 
 <a name="process_file"></a>
 ### Process File
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -89,6 +92,7 @@ dependencies {
 
 <a name="utils"></a>
 ### Utils
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -99,6 +103,7 @@ dependencies {
 
 <a name="default_function"></a>
 ### DefaultFunction Class
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -110,6 +115,7 @@ dependencies {
 
 <a name="convert"></a>
 ### Convert
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -118,11 +124,9 @@ dependencies {
 
 
 
-** **
-
-
 <a name="shared_preference"></a>
 ### SharedPreference
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -138,6 +142,7 @@ dependencies {
 
 <a name="permisstion"></a>
 ### Permission
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
