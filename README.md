@@ -105,7 +105,7 @@ dependencies {
 | checkPackageName(String packageName) | Kiểm tra xem package name hiện tại có giống với package name truyền vào không nếu không thì mở ứng dụng trên google play và đóng app. Mục đích là để chặn clone ứng dụng | **`DefaultFunction.getInstance(this). checkPackageName("co.pamobile");`** |
 | checkRateApp() | Hiện dialog yêu cầu người dùng rate app mỗi 3 lần mở ứng dụng | **`DefaultFunction.getInstance(this). checkRateApp();`** |
 | checkCodeVersion(intversionCode) | Kiểm tra nếu version code hiện tại nhỏ hơn version code được truyền vào thì show dialog yêu cầu người dùng update | **`DefaultFunction.getInstance(this). checkCodeVersion(newVrCode)`** |
-| confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction. getInstance(this). confirmExit()`** |
+| confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction.getInstance(this). confirmExit()`** |
 | overrideFonts(finalView v,Typeface typeface) | Override lại fonts của view được truyền vào | **`DefaultFunction.getInstance(this). overrideFonts(view , typeface)`** |
 
 <a name="convert"></a>
@@ -126,14 +126,14 @@ dependencies {
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
-|  saveDate(String key,Date date) | Lưu Date vào SharedPreferences | **`SharedPreference._getInstance_(this).saveDate("UPDATE_DATE",new Date());`** |
-| getDate(String key) | Truyền vào key đã lưu trước đó để lấy ra date từ SharedPreferences | **`SharedPreference._getInstance_(this).getDate("UPDATE_DATE");`** |
-| saveInt( String key, int num) | Lưu một số vào SharedPreferences | **`SharedPreference._getInstance_(this).saveInt("KEY_NAME", value);`** |
-| getInt(String key) | Truyền vào key để lấy ra số đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getInt("KEY_NAME");`** |
-| saveBoolean( String key, boolean value) | Lưu một giá trị kiểu boolean vào SharedPreferences | **`SharedPreference._getInstance_(this).saveBoolean("KEY_NAME", true);`** |
-| getBoolean(String key) | Truyền vào key để lấy giá trị boolean đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getBoolean("KEY_NAME");`** |
-| saveString( String key, String value) | Lưu string vào SharedPreferences | **`SharedPreference._getInstance_(this).saveString("KEY_NAME", "ABC");`** |
-| getString(String key) | Truyền vào key để lấy giá trị string đã lưu từ SharedPreferences | **`SharedPreference._getInstance_(this).getString("KEY_NAME");`** |
+|  saveDate(String key,Date date) | Lưu Date vào SharedPreferences | **`SharedPreference.getInstance(this). saveDate("UPDATE_DATE",new Date());`** |
+| getDate(String key) | Truyền vào key đã lưu trước đó để lấy ra date từ SharedPreferences | **`SharedPreference.getInstance(this). getDate("UPDATE_DATE");`** |
+| saveInt( String key, int num) | Lưu một số vào SharedPreferences | **`SharedPreference.getInstance(this). saveInt("KEY_NAME", value);`** |
+| getInt(String key) | Truyền vào key để lấy ra số đã lưu từ SharedPreferences | **`SharedPreference.getInstance(this). getInt("KEY_NAME");`** |
+| saveBoolean( String key, boolean value) | Lưu một giá trị kiểu boolean vào SharedPreferences | **`SharedPreference.getInstance(this). saveBoolean("KEY_NAME", true);`** |
+| getBoolean(String key) | Truyền vào key để lấy giá trị boolean đã lưu từ SharedPreferences | **`SharedPreference.getInstance(this). getBoolean("KEY_NAME");`** |
+| saveString( String key, String value) | Lưu string vào SharedPreferences | **`SharedPreference.getInstance(this). saveString("KEY_NAME", "ABC");`** |
+| getString(String key) | Truyền vào key để lấy giá trị string đã lưu từ SharedPreferences | **`SharedPreference.getInstance(this). getString("KEY_NAME");`** |
 
 
 <a name="permisstion"></a>
