@@ -1,7 +1,31 @@
+# PACore Library
+![](https://camo.githubusercontent.com/d4e0f63e9613ee474a7dfdc23c240b9795712c96/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e737667)
 
-## Xử lý mảng 
+## Cài đặt
 
+``` java
+dependencies {
+     implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
+}
+```
 
+## Nội dung
+* [Array](#array)
+* [Bitmap](#bitmap)
+* [Json](#json)
+* [Layout](#layout)
+* [Process File](#process_file)
+* [Utils](#utils)
+* [DefaultFunction Class](#default_function)
+* [Convert](#convert)
+* [SharedPreference](#shared_preference)
+* [Permission](#permission)
+
+ <a name="array"></a>
+ 
+### Array 
+***
+ 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
 | toArray(ArrayList&lt;T&gt; list) | Chuyển từ ArrayList sang Array |  ArrayList&lt;AppItem&gt; arrayList = new ArrayList&lt;&gt;(); <br/> AppItem[] arrResult = **`ArrayConvert.toArray(arrayList);`** |
@@ -13,22 +37,23 @@
 | toArrayList(T[] list) | Chuyển từ Array sang ArrayList | AppItem[]  arrAppItem = new AppItem[]{app1, app2};<br/>ArrayList&lt;AppItem&gt; arrResult = **`ArrayConvert.toArrayList(arrAppItem)`**;  |
 
 
-
-## Bitmap
-
+<a name="bitmap"></a>
+### Bitmap
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
 | getBitmapFromAssets(Context context, String path) | Trả về bitmap của một hình ảnh trong thư mục assets từ đường dẫn do người dùng truyền vào  | Bitmap mBitmap =   **`BitmapClass. getBitmapFromAssets(mContext,path);`** |
-| getBitmapFromURL(String src) | Trả về  bitmap từ url do người dùng truyền vào | Bitmap mBitmap =   **`BitmapClass.getBitmapFromURL(url);`** |
-| loadBitmapFromView(View v) | Tạo và trả về bitmap từ view được truyền vào | Bitmap bitmap = **`BitmapClass.loadBitmapFromView(view)`**; |
-| loadBitmapFromFile(String path) | Đọc một file hình ảnh và trả về bitmap từ đường dẫn truyền vào | Bitmap mResult = **`BitmapClass.loadBitmapFromFile(path)`**; |
-| AsyncGettingBitmapFromUrl() | Class load async lấy bitmap từ url | Bitmap mResult  =  new **`BitmapClass.AsyncGettingBitmapFromUrl().execute(url).get();`** |
+| getBitmapFromURL(String src) | Trả về  bitmap từ url do người dùng truyền vào | Bitmap mBitmap =   **`BitmapClass .getBitmapFromURL(url);`** |
+| loadBitmapFromView(View v) | Tạo và trả về bitmap từ view được truyền vào | Bitmap bitmap = **`BitmapClass .loadBitmapFromView(view)`**; |
+| loadBitmapFromFile(String path) | Đọc một file hình ảnh và trả về bitmap từ đường dẫn truyền vào | Bitmap mResult = **`BitmapClass .loadBitmapFromFile(path)`**; |
+| AsyncGettingBitmapFromUrl() | Class load async lấy bitmap từ url | Bitmap mResult  =  new **`BitmapClass .AsyncGettingBitmapFromUrl().execute(url).get();`** |
 
 
 
-
-## Json
+<a name="json"></a>
+### Json
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -40,8 +65,9 @@
 
 
 
-
-## Layout
+<a name="layout"></a>
+### Layout
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -52,8 +78,9 @@
 | getActionBarHeight(Activity mActivity) | Phương thức trả về height của action bar | intheight = **`LayoutParams.getActionBarHeight(mActivity);`** |
 
 
-
-## Process File
+<a name="process_file"></a>
+### Process File
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
@@ -63,24 +90,64 @@
 | openImage(Context context, String path) | Mở hình ảnh từ đường dẫn truyền vào | **`ProcessFile.openImage(mContext, path);`** |
 
 
-
-## Utils
+<a name="utils"></a>
+### Utils
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
 | openFacebookURL(Activity mActivity, String fbURL) | Mở Facebook từ url truyền vào | **`Utils.openFacebookURL(mActivity, fbURL)`** |
 | openYouTubeURL(Activity mActivity, String YouTubeURL) | Mở Youtube từ url truyền vào | **`Utils.openYouTubeURL( mActivity, youtubeURL)`** |
-| convertPixelsToDp(floatpx) | Nhận vào giá trị pixel trả về Dp | **`Utils.convertPixelsToDp(100)`** |
-| convertDpToPixel(floatdp) | Nhận vào giá trị Dp trả về Pixel | **`Utils.convertDpToPixel(100)`** |
+| showDialog(Context context, String title, String message) | Hiển thị một dialog đơn giản | **`Utils.showDialog(mCont, title, message);`** |
 
 
-
-## DefaultFunction Class
+<a name="default_function"></a>
+### DefaultFunction Class
+***
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
-| checkPackageName(String packageName) | Kiểm tra xem package name hiện tại có giống với package name truyền vào không nếu không thì mở ứng dụng trên google play và đóng app. Mục đích là để chặn clone ứng dụng | **`DefaultFunction.getInstance(this).checkPackageName("co.pamobile");`** |
-| checkRateApp() | Hiện dialog yêu cầu người dùng rate app mỗi 3 lần mở ứng dụng | **`DefaultFunction.getInstance(this).checkRateApp();`** |
-| checkCodeVersion(intversionCode) | Kiểm tra nếu version code hiện tại nhỏ hơn version code được truyền vào thì show dialog yêu cầu người dùng update | **`DefaultFunction.getInstance(this).checkCodeVersion(newVrCode)`** |
-| confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction. getInstance(this).confirmExit()`** |
-| overrideFonts(finalView v,Typeface typeface) | Override lại fonts của view được truyền vào | **`DefaultFunction.getInstance(this).overrideFonts(view , typeface)`** |
+| checkPackageName(String packageName) | Kiểm tra xem package name hiện tại có giống với package name truyền vào không nếu không thì mở ứng dụng trên google play và đóng app. Mục đích là để chặn clone ứng dụng | **`DefaultFunction.getInstance(this). checkPackageName("co.pamobile");`** |
+| checkRateApp() | Hiện dialog yêu cầu người dùng rate app mỗi 3 lần mở ứng dụng | **`DefaultFunction.getInstance(this). checkRateApp();`** |
+| checkCodeVersion(intversionCode) | Kiểm tra nếu version code hiện tại nhỏ hơn version code được truyền vào thì show dialog yêu cầu người dùng update | **`DefaultFunction.getInstance(this). checkCodeVersion(newVrCode)`** |
+| confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction.getInstance(this). confirmExit()`** |
+| overrideFonts(finalView v,Typeface typeface) | Override lại fonts của view được truyền vào | **`DefaultFunction.getInstance(this). overrideFonts(view , typeface)`** |
+
+<a name="convert"></a>
+### Convert
+***
+
+| **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
+| --- | --- | --- |
+| convertPixelsToDp(float px)  | Nhận vào giá trị pixel trả về Dp | **`Utils.convertPixelsToDp(value)`**  |
+| convertDpToPixel(float dp) | Nhận vào giá trị Dp trả về Pixel | **`Utils.convertDpToPixel(value)`**  |
+
+
+
+<a name="shared_preference"></a>
+### SharedPreference
+***
+
+| **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
+| --- | --- | --- |
+|  saveDate(String key,Date date) | Lưu Date vào SharedPreferences | **`SharedPreference.getInstance(this). saveDate("UPDATE_DATE",new Date());`** |
+| getDate(String key) | Truyền vào key đã lưu trước đó để lấy ra date từ SharedPreferences | **`SharedPreference.getInstance(this). getDate("UPDATE_DATE");`** |
+| saveInt( String key, int num) | Lưu một số vào SharedPreferences | **`SharedPreference.getInstance(this). saveInt("KEY_NAME", value);`** |
+| getInt(String key) | Truyền vào key để lấy ra số đã lưu từ SharedPreferences | **`SharedPreference.getInstance(this). getInt("KEY_NAME");`** |
+| saveBoolean( String key, boolean value) | Lưu một giá trị kiểu boolean vào SharedPreferences | **`SharedPreference.getInstance(this). saveBoolean("KEY_NAME", true);`** |
+| getBoolean(String key) | Truyền vào key để lấy giá trị boolean đã lưu từ SharedPreferences | **`SharedPreference.getInstance(this). getBoolean("KEY_NAME");`** |
+| saveString( String key, String value) | Lưu string vào SharedPreferences | **`SharedPreference.getInstance(this). saveString("KEY_NAME", "ABC");`** |
+| getString(String key) | Truyền vào key để lấy giá trị string đã lưu từ SharedPreferences | **`SharedPreference.getInstance(this). getString("KEY_NAME");`** |
+
+
+<a name="permisstion"></a>
+### Permission
+***
+
+| **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
+| --- | --- | --- |
+|  RequestPermission(final String... permissions) | Yêu cầu quyền truy cập trên thiết bị | String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};<br/>**`CheckPermission.getInstance(this).RequestPermission(permissions);`** |
+
+Liencse
+===
+Copyright 2019 PAMobile Company
