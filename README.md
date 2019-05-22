@@ -102,11 +102,11 @@ dependencies {
 
 | **TÊN PHƯƠNG THỨC** | **MÔ TẢ** | **SỬ DỤNG** |
 | --- | --- | --- |
-| checkPackageName(String packageName) | Kiểm tra xem package name hiện tại có giống với package name truyền vào không nếu không thì mở ứng dụng trên google play và đóng app. Mục đích là để chặn clone ứng dụng | **`DefaultFunction.getInstance(this).checkPackageName("co.pamobile");`** |
-| checkRateApp() | Hiện dialog yêu cầu người dùng rate app mỗi 3 lần mở ứng dụng | **`DefaultFunction.getInstance(this).checkRateApp();`** |
-| checkCodeVersion(intversionCode) | Kiểm tra nếu version code hiện tại nhỏ hơn version code được truyền vào thì show dialog yêu cầu người dùng update | **`DefaultFunction.getInstance(this).checkCodeVersion(newVrCode)`** |
-| confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction. getInstance(this).confirmExit()`** |
-| overrideFonts(finalView v,Typeface typeface) | Override lại fonts của view được truyền vào | **`DefaultFunction.getInstance(this).overrideFonts(view , typeface)`** |
+| checkPackageName(String packageName) | Kiểm tra xem package name hiện tại có giống với package name truyền vào không nếu không thì mở ứng dụng trên google play và đóng app. Mục đích là để chặn clone ứng dụng | **`DefaultFunction.getInstance(this). checkPackageName("co.pamobile");`** |
+| checkRateApp() | Hiện dialog yêu cầu người dùng rate app mỗi 3 lần mở ứng dụng | **`DefaultFunction.getInstance(this). checkRateApp();`** |
+| checkCodeVersion(intversionCode) | Kiểm tra nếu version code hiện tại nhỏ hơn version code được truyền vào thì show dialog yêu cầu người dùng update | **`DefaultFunction.getInstance(this). checkCodeVersion(newVrCode)`** |
+| confirmExit() | Show dialog thông báo trước khi người dùng thoát app | **`DefaultFunction. getInstance(this). confirmExit()`** |
+| overrideFonts(finalView v,Typeface typeface) | Override lại fonts của view được truyền vào | **`DefaultFunction.getInstance(this). overrideFonts(view , typeface)`** |
 
 <a name="convert"></a>
 ### Convert
