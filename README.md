@@ -5,7 +5,7 @@
 
 ``` java
 dependencies {
-     implementation 'com.github.pamobilevn.PALibrary:PACore:v2.15'
+     implementation 'com.github.pamobilevn:PALibrary:v2.17'
 }
 ```
 
